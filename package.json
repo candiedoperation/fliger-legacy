@@ -1,0 +1,21 @@
+{
+  "name": "fliger",
+  "version": "1.0.0",
+  "description": "A Linux Replacement for macOS Spotlight",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Atheesh Thirumalairajan",
+  "license": "ISC",
+  "dependencies": {
+    "flexsearch": "^0.6.32",
+    "glob": "^7.1.6",
+    "mime-types": "^2.1.30",
+    "pdf-lib": "^1.6.0"
+  },
+  "devDependencies": {
+    "electron": "^12.0.5"
+  }
+}

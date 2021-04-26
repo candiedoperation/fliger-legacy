@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html data-theme="light">
+
+<head>
+    <title>Fliger Suggestions</title>
+    <link href="material-css/css/material.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="fliger.css">
+</head>
+
+<body>
+    <div class="fliger-panelContainer row no-gutters h-100">
+        <div class="col-4 h-100 fliger-suggestion-parent" style="overflow-y: auto; overflow-x: hidden;">
+            <div class="list-group fliger-suggestion-list">
+
+            </div>
+        </div>
+        <div class="col-8 h-100 fliger-preview-parent" style="overflow-y: auto; overflow-x: hidden;">
+            <div
+                class="fliger-preview-watermark fliger-preview-template p-3 d-flex flex-column justify-content-center align-items-center text-center">
+                <img src="images/preview_black_48dp.svg" class="fliger-thumbnail-semitrans" />
+                <p class="fliger-preview-text mb-0">Hover to Preview</p>
+                <p class="fliger-preview-subtext">Hover on the suggestions from the list to preview and click the
+                    suggestion to navigate.</p>
+            </div>
+            <div
+                class="fliger-preview-simple fliger-preview-template p-3 d-none flex-column justify-content-center align-items-center text-center">
+                <img src="" class="fliger-preview-thumbnail" />
+                <video src="" class="w-100" muted autoplay></video>
+                <p class="fliger-preview-text mb-0"></p>
+                <p class="fliger-preview-subtext"></p>
+            </div>
+            <div
+            class="fliger-preview-pdf fliger-preview-template p-3 d-none flex-column justify-content-center align-items-center text-center">
+            <iframe src=""></iframe>
+            <p class="fliger-preview-text mb-0"></p>
+            <p class="fliger-preview-subtext"></p>
+        </div>
+        </div>
+    </div>
+
+    <script>if (typeof module === 'object') { window.module = module; module = undefined; }</script>
+    <script src="jquery/jquery-3.6.0.min.js"></script>
+    <script src="material-css/js/bootstrap.bundle.min.js"></script>
+    <script src="material-css/js/material.min.js"></script>
+    <script src="fliger_panel.js"></script>
+    <script>if (window.module) module = window.module;</script>
+</body>
+
+</html>

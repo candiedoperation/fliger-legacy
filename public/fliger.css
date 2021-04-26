@@ -1,0 +1,110 @@
+body, html {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+@font-face {
+    font-family: 'Inter Light';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("fonts/Inter-Light.woff2?v=3.18") format("woff2"), url("fonts/Inter-Light.woff?v=3.18") format("woff");
+}
+
+@font-face {
+    font-family: 'Inter Bold';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("fonts/Inter-Bold.woff2?v=3.18") format("woff2"), url("fonts/Inter-Bold.woff?v=3.18") format("woff");
+}
+
+@font-face {
+    font-family: 'Inter SemiBold';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("fonts/Inter-SemiBold.woff2?v=3.18") format("woff2"), url("fonts/Inter-SemiBold.woff?v=3.18") format("woff");
+}
+
+.fliger-suggestion-parent::-webkit-scrollbar {
+    width: 0px;
+}
+
+.fliger-preview-parent::-webkit-scrollbar {
+    width: 5px;
+}
+
+.fliger-preview-parent::-webkit-scrollbar-track {
+    background: transparent;
+    width: 5px;
+}
+
+.fliger-preview-parent::-webkit-scrollbar-thumb {
+    background-color: rgba(133, 133, 133, 0.6);
+    border-radius: 3px;
+    width: 3px;
+}
+
+.fliger-searchContainer {
+    display: flex;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.fliger-searchIcon {
+    opacity: 0.5;
+}
+
+.fliger-searchBox {
+    outline: none;
+    border: none;
+    width: 97%;
+    font-size: 60vh;
+    font-family: 'Inter Light';
+}
+
+.fliger-suggestion-list {
+    min-height: 100%;
+}
+
+.fliger-suggestion-preview {
+    min-height: 100%;
+}
+
+.fliger-preview-thumbnail {
+    width: 20vw;
+}
+
+.fliger-thumbnail-semitrans {
+    width: 10vw;
+}
+
+.fliger-preview-text {
+    font-size: 10vh;
+    font-family: 'Inter Bold';
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    width: 90%;
+    word-wrap: break-word;
+    line-height: initial;
+}
+
+.fliger-preview-subtext {
+    font-size: 3vh;
+    font-family: 'Inter SemiBold';
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    width: 80%;
+    word-wrap: break-word;
+    opacity: 0.7;
+}
+
+.fliger-preview-template {
+    min-height: 100%;
+}
