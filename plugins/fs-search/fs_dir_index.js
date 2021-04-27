@@ -20,8 +20,14 @@ function index_paths(src, glob_wildcard, index_export_path, callback) {
         } else {
             res.forEach((path) => {
                 if (fs.existsSync(path) && fs.lstatSync(path).isDirectory()) {
+                    var autoIndex = paths.length;
+
+                    if(paths.length != 0) {
+                        autoIndex = ((paths[paths.length - 1].id) + 1);
+                    }
+
                     paths.push({
-                        id: paths.length,
+                        id: autoIndex,
                         path_location: path.toString(),
                         path_name: path.substr(path.lastIndexOf("/") + 1)
                     });
@@ -51,7 +57,7 @@ function initializeSearch(query_string, callback) {
                 callback(err);
             } else {
                 index.import(file_buffer);
-                callback(false, index.search({ query: query_string, limit: 15 }));
+                callback(false, index.search({ query: query_string, limit: 20 }));
             }
         });
     }
