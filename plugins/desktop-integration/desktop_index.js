@@ -126,14 +126,18 @@ index_desktop_files = (callback) => {
                                                 app_icon = matched_icons.find((icon_size) => { return icon_size.includes("scalable") });
                                             } else if (matched_icons.find((icon_size) => { return icon_size.includes("128") })) {
                                                 console.log("128x128 icon exists for the app");
-                                                app_icon = match_app_icons.find((icon_size) => { return icon_size.includes("128") });
+                                                app_icon = matched_icons.find((icon_size) => { return icon_size.includes("128") });
                                             } else {
                                                 console.log("Fallback icon from list is used");
                                                 app_icon = matched_icons.pop();
                                             }
 
                                             console.log();
-                                            increment_loop();
+                                            increment_loop({
+                                                app_name: app_name,
+                                                app_icon: app_icon,
+                                                app_exec: app_exec
+                                            });
                                         } else {
                                             console.log("Using Fliger Default App Icon: images/mime/application-x-executable.svg");
                                             console.log();
