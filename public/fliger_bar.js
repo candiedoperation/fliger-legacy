@@ -22,3 +22,7 @@ window.ipcRenderer.on("isQueryEmpty", (event, message) => {
         window.ipcRenderer.send("isQueryEmpty", false);
     }
 });
+
+window.ipcRenderer.on("clear_inpur_query", (event, message) => {
+    $("#fl-launchBox").val("");
+});

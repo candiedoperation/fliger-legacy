@@ -3,6 +3,7 @@ const { exec, spawn } = require('child_process');
 const ipc = require('electron').ipcMain;
 const path = require("path");
 const fliger_plugins = require("./plugins");
+const open = require('open');
 var fliger_bar;
 var fliger_panel;
 
@@ -79,6 +80,18 @@ function createWindow() {
 
     ipc.on("exec-term-command", (event, message) => {
         spawn(message, { shell: true, detached: true, stdio: 'ignore' }).unref();
+
+        fliger_bar.webContents.send("clear_inpur_query", { src: "app.js" });
+        fliger_panel.hide();
+        fliger_bar.hide();
+    });
+
+    ipc.on("open-default-app", (event, message) => {
+        open(message);
+
+        fliger_bar.webContents.send("clear_inpur_query", { src: "app.js" });
+        fliger_panel.hide();
+        fliger_bar.hide();
     });
 }
 
