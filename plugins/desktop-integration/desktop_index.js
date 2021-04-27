@@ -59,9 +59,13 @@ index_desktop_files = (callback) => {
                 const display_boolean = parsed_desktop_entry.find((entry) => { return entry.startsWith("NoDisplay=") });
 
                 if (!display_boolean == true) {
-                    const app_name = parsed_desktop_entry.find((entry) => { return entry.startsWith("Name=") }).substr(5);
+                    var app_name = parsed_desktop_entry.find((entry) => { return entry.startsWith("Name=") }).substr(5);
                     var app_icon = parsed_desktop_entry.find((entry) => { return entry.startsWith("Icon=") }).substr(5);
-                    const app_exec = parsed_desktop_entry.find((entry) => { return entry.startsWith("Exec=") }).substr(5);
+                    var app_exec = parsed_desktop_entry.find((entry) => { return entry.startsWith("Exec=") }).substr(5);
+
+                    app_exec = app_exec.split(" ");
+                    app_exec = app_exec.filter((params) => { return !params.startsWith("%") });
+                    app_exec = app_exec.join(" ");
 
                     const preffered_icon_path = '/usr/share/icons/hicolor/';
 

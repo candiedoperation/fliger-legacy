@@ -1,5 +1,6 @@
-const { app, BrowserWindow, screen, globalShortcut } = require('electron')
-const ipc = require('electron').ipcMain
+const { app, BrowserWindow, screen, globalShortcut } = require('electron');
+const { exec, spawn } = require('child_process');
+const ipc = require('electron').ipcMain;
 const path = require("path");
 const fliger_plugins = require("./plugins");
 var fliger_bar;
@@ -74,6 +75,10 @@ function createWindow() {
         fliger_plugins.automate(message, (query_suggestions) => {
             fliger_panel.webContents.send("take_query_suggestions", query_suggestions);
         })
+    });
+
+    ipc.on("exec-term-command", (event, message) => {
+        spawn(message, { shell: true, detached: true, stdio: 'ignore' }).unref();
     });
 }
 

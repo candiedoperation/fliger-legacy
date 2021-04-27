@@ -9,10 +9,10 @@ window.ipcRenderer.on("take_query_suggestions", (event, suggestions) => {
         /*$(".fliger-suggestion-list").append(`<a href="#" onmouseover="hovered_suggestion(this);" data-preview='${JSON.stringify(suggestion.matches[0])}' class="list-group-item list-group-item-action active">${suggestion.matches[0].path_name}</a>`);
         suggestion.matches.shift();*/
         suggestion.matches.forEach((match) => {
-            if(suggestion.category == "Files" || suggestion.category == "Folders") {
-                $(".fliger-suggestion-list").append(`<a onmouseover="hovered_suggestion(this);" data-preview='${JSON.stringify(match)}' data-suggtype='${suggestion.category}' class="list-group-item list-group-item-action text-truncate">${match.path_name}</a>`);
-            } else if(suggestion.category == "Apps") {
-                $(".fliger-suggestion-list").append(`<a onmouseover="hovered_suggestion(this);" data-preview='${JSON.stringify(match)}' data-suggtype='${suggestion.category}' class="list-group-item list-group-item-action text-truncate">${match.app_name}</a>`);
+            if (suggestion.category == "Files" || suggestion.category == "Folders") {
+                $(".fliger-suggestion-list").append(`<a onmouseover="hovered_suggestion(this);" onclick="clicked_suggestion(this);" data-preview='${JSON.stringify(match)}' data-suggtype='${suggestion.category}' class="list-group-item list-group-item-action text-truncate">${match.path_name}</a>`);
+            } else if (suggestion.category == "Apps") {
+                $(".fliger-suggestion-list").append(`<a onmouseover="hovered_suggestion(this);" onclick="clicked_suggestion(this);" data-preview='${JSON.stringify(match)}' data-suggtype='${suggestion.category}' class="list-group-item list-group-item-action text-truncate">${match.app_name}</a>`);
             }
         })
     });
@@ -117,8 +117,19 @@ function update_preview_panel(preview_data, suggestion_type) {
     }
 }
 
+function clicked_suggestion(suggestion) {
+    var suggestion_type = $(suggestion).data("suggtype");
+    var suggestion_data = $(suggestion).data("preview");
+
+    if (suggestion_type == "Apps") {
+        window.ipcRenderer.send("exec-term-command", suggestion_data.app_exec);
+    } else if (suggestion_type == "File" || suggestion_type == "Folder") {
+        window.ipcRenderer.send("open-default-app", suggestion_data.path_location);
+    }
+}
+
 function change_preview_panel(panel_type) {
-    switch(panel_type) {
+    switch (panel_type) {
         case "watermark-panel": {
             $(".fliger-preview-template").addClass("d-none").removeClass("d-flex");
             $(".fliger-preview-watermark").addClass("d-flex").removeClass("d-none");
@@ -128,7 +139,7 @@ function change_preview_panel(panel_type) {
         case "simple-preview-panel": {
             $(".fliger-preview-template").addClass("d-none").removeClass("d-flex");
             $(".fliger-preview-simple").addClass("d-flex").removeClass("d-none");
-            break;            
+            break;
         }
     }
 }
