@@ -13,6 +13,8 @@ window.ipcRenderer.on("take_query_suggestions", (event, suggestions) => {
                 $(".fliger-suggestion-list").append(`<a onmouseover="hovered_suggestion(this);" onclick="clicked_suggestion(this);" data-preview='${JSON.stringify(match)}' data-suggtype='${suggestion.category}' class="list-group-item list-group-item-action text-truncate">${match.path_name}</a>`);
             } else if (suggestion.category == "Apps") {
                 $(".fliger-suggestion-list").append(`<a onmouseover="hovered_suggestion(this);" onclick="clicked_suggestion(this);" data-preview='${JSON.stringify(match)}' data-suggtype='${suggestion.category}' class="list-group-item list-group-item-action text-truncate">${match.app_name}</a>`);
+            } else if (suggestion.category == "Calculator") {
+                $(".fliger-suggestion-list").append(`<a onmouseover="hovered_suggestion(this);" onclick="clicked_suggestion(this);" data-preview='${JSON.stringify(match)}' data-suggtype='${suggestion.category}' class="list-group-item list-group-item-action text-truncate">${match.calc_result}</a>`);
             }
         })
     });
@@ -79,6 +81,10 @@ function update_preview_panel(preview_data, suggestion_type) {
             change_preview_panel("simple-preview-panel", preview_data.app_icon, preview_data.app_name, "Click the suggestion to launch the Application");
             break;
         }
+
+        case "Calculator": {
+            change_preview_panel("simple-preview-panel", "images/calculator.svg", preview_data.calc_result, preview_data.calc_subtext);
+        }
     }
 }
 
@@ -90,6 +96,13 @@ function clicked_suggestion(suggestion) {
         window.ipcRenderer.send("exec-term-command", suggestion_data.app_exec);
     } else if (suggestion_type == "Files" || suggestion_type == "Folders") {
         window.ipcRenderer.send("open-default-app", suggestion_data.path_location);
+    } else if (suggestion_type == "Calculator") {
+        window.electronClipboard.writeText($(suggestion).text());
+        showToast("Copied result to clipboard");
+
+        $("#info-toast").on("hidden.bs.toast", () => {
+            window.ipcRenderer.send("fliger-suggestion-default", { src: "fliger_panel.js" });
+        });
     }
 }
 
@@ -137,4 +150,9 @@ function change_preview_panel(panel_type, source, text, subtext) {
             break;
         }
     }
+}
+
+function showToast(message) {
+    $("#info-toast").find(".toast-header").text(message);
+    $("#info-toast").toast('show');
 }

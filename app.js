@@ -1,5 +1,5 @@
 const { app, BrowserWindow, screen, globalShortcut } = require('electron');
-const { exec, spawn } = require('child_process');
+const { spawn } = require('child_process');
 const ipc = require('electron').ipcMain;
 const path = require("path");
 const fliger_plugins = require("./plugins");
@@ -77,6 +77,12 @@ function createWindow() {
             fliger_panel.webContents.send("take_query_suggestions", query_suggestions);
         })
     });
+
+    ipc.on("fliger-suggestion-default", (event, message) => {
+        fliger_bar.webContents.send("clear_inpur_query", { src: "app.js" });
+        fliger_panel.hide();
+        fliger_bar.hide();
+    })
 
     ipc.on("exec-term-command", (event, message) => {
         spawn(message, { shell: true, detached: true, stdio: 'ignore' }).unref();

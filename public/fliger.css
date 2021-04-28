@@ -108,3 +108,9 @@ body, html {
 .fliger-preview-template {
     min-height: 100%;
 }
+
+.fliger-bottom-toast {
+    right: 0 !important;
+    bottom: 0 !important;
+    left: auto !important;
+}
