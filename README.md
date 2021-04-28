@@ -1,5 +1,5 @@
 Fliger is an Electron Based Launcher focused on Linux Desktops.
-![Fliger_Unit_Convert](uploads/f4fa1f3f70dad12c9686d1eb05ececaf/Fliger_Unit_Convert.png)
+![Fliger_Logo](public/images/fliger.svg)
 
 There is Fliger where,
 - Apps are **Listed**
