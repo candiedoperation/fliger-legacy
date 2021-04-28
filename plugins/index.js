@@ -42,7 +42,7 @@ function automate(query_string, callback) {
     });
 
     const settings_promise = new Promise((resolve, reject) => {
-        if(query_string.toLowerCase().startsWith("fli")) {
+        if (query_string.toLowerCase().startsWith("fl")) {
             resolve([
                 {
                     fliger_title: "About Fliger"
@@ -66,7 +66,7 @@ function automate(query_string, callback) {
             suggestions.unshift({ category: "Calculator", matches: plugin_suggestions[3] });
         }
 
-        if(plugin_suggestions[4]) {
+        if (plugin_suggestions[4]) {
             suggestions.unshift({ category: "Fliger", matches: plugin_suggestions[4] });
         }
 

@@ -85,25 +85,17 @@ function createWindow() {
     });
 
     ipc.on("fliger-suggestion-default", (event, message) => {
-        fliger_bar.webContents.send("clear_inpur_query", { src: "app.js" });
-        fliger_panel.hide();
-        fliger_bar.hide();
+        resetFrontend();
     })
 
     ipc.on("exec-term-command", (event, message) => {
         spawn(message, { shell: true, detached: true, stdio: 'ignore' }).unref();
-
-        fliger_bar.webContents.send("clear_inpur_query", { src: "app.js" });
-        fliger_panel.hide();
-        fliger_bar.hide();
+        resetFrontend();
     });
 
     ipc.on("open-default-app", (event, message) => {
         open(message);
-
-        fliger_bar.webContents.send("clear_inpur_query", { src: "app.js" });
-        fliger_panel.hide();
-        fliger_bar.hide();
+        resetFrontend();
     });
 
     ipc.on("show-fliger-licenses", (event, message) => {
@@ -112,10 +104,22 @@ function createWindow() {
             type: "info",
             message: license_message,
             buttons: ["Show all Licenses"],
-            defaultId: [0],
+            cancelId: 1,
             title: "License Information"
+        }).then((clicked_button) => {
+            if (!clicked_button.response == 1) {
+                console.log("Opening Open Source Licenses");
+                open(path.join(__dirname, "public", "licenses.pdf"));
+                resetFrontend();
+            }
         })
     });
+}
+
+function resetFrontend() {
+    fliger_bar.webContents.send("clear_inpur_query", { src: "app.js" });
+    fliger_panel.hide();
+    fliger_bar.hide();
 }
 
 app.whenReady().then(() => {
