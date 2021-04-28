@@ -1,4 +1,10 @@
-const { app, BrowserWindow, screen, globalShortcut } = require('electron');
+/*
+    Fliger
+    Copyright (C) 2021  Atheesh  Thirumalairajan
+    LICENSE
+*/
+
+const { app, BrowserWindow, screen, globalShortcut, dialog } = require('electron');
 const { spawn } = require('child_process');
 const ipc = require('electron').ipcMain;
 const path = require("path");
@@ -98,6 +104,17 @@ function createWindow() {
         fliger_bar.webContents.send("clear_inpur_query", { src: "app.js" });
         fliger_panel.hide();
         fliger_bar.hide();
+    });
+
+    ipc.on("show-fliger-licenses", (event, message) => {
+        const license_message = "Fliger\nCopyright (C) 2021  Atheesh  Thirumalairajan\nGNU GENERAL PUBLIC LICENSE"
+        dialog.showMessageBox(fliger_panel, {
+            type: "info",
+            message: license_message,
+            buttons: ["Show all Licenses"],
+            defaultId: [0],
+            title: "License Information"
+        })
     });
 }
 

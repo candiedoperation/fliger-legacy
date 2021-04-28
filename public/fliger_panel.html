@@ -1,3 +1,9 @@
+<!--
+    Fliger
+    Copyright (C) 2021  Atheesh  Thirumalairajan
+    ../LICENSE
+-->
+
 <!DOCTYPE html>
 <html data-theme="light">
 
@@ -41,8 +47,19 @@
                 <p class="fliger-preview-subtext"></p>
             </div>
             <div class="toast-container fliger-bottom-toast">
-                <div class="toast" id="info-toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="500">
+                <div class="toast" id="info-toast" role="alert" aria-live="assertive" aria-atomic="true"
+                    data-delay="500">
                     <div class="toast-header"></div>
+                </div>
+            </div>
+            <div
+                class="fliger-settings-preview fliger-preview-template p-3 d-none flex-column justify-content-center align-items-center text-center">
+                <img src="images/fliger.svg" class="fliger-preview-thumbnail" />
+                <p class="fliger-preview-text mb-0 mt-3">About Fliger</p>
+                <p class="fliger-preview-subtext">An Electron Based Launcher for Linux</p>
+                <div class="d-flex flex-row">
+                    <button class="btn btn-dark mr-2">Settings</button>
+                    <button class="btn btn-warning" onclick="show_licenses();">Open Source Licenses</button>
                 </div>
             </div>
         </div>

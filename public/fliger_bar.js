@@ -1,3 +1,9 @@
+/*
+    Fliger
+    Copyright (C) 2021  Atheesh  Thirumalairajan
+    ../LICENSE
+*/
+
 $(() => {
     $("#fl-launchBox").focus();
 });

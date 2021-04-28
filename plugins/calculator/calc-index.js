@@ -1,3 +1,9 @@
+/*
+    Fliger
+    Copyright (C) 2021  Atheesh  Thirumalairajan
+    ../../LICENSE
+*/
+
 const math = require("mathjs");
 
 function eval_query(query_string, callback) {

@@ -1,3 +1,9 @@
+/*
+    Fliger
+    Copyright (C) 2021  Atheesh  Thirumalairajan
+    ../../LICENSE
+*/
+
 var path_list = [
     {
         path_url: "/home",

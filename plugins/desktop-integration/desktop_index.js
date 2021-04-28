@@ -1,3 +1,9 @@
+/*
+    Fliger
+    Copyright (C) 2021  Atheesh  Thirumalairajan
+    ../../LICENSE
+*/
+
 const glob = require("glob");
 const FlexSearch = require("flexsearch");
 const fs = require("fs");

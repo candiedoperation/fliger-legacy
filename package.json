@@ -1,14 +1,16 @@
 {
   "name": "fliger",
   "version": "1.0.0",
-  "description": "A Linux Replacement for macOS Spotlight",
+  "description": "An Electron Based Launcher for Linux",
   "main": "app.js",
   "scripts": {
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Atheesh Thirumalairajan",
-  "license": "ISC",
+  "homepage": "https://gitlab.com/candiedoperation/fliger#readme",
+  "bugs": "https://gitlab.com/candiedoperation/fliger/issues",
+  "license": "GPL-3.0-only",
   "dependencies": {
     "flexsearch": "^0.6.32",
     "glob": "^7.1.6",

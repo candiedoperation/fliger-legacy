@@ -1,3 +1,9 @@
+/*
+    Fliger
+    Copyright (C) 2021  Atheesh  Thirumalairajan
+    ../LICENSE
+*/
+
 window.ipcRenderer.on("ping", (event, message) => {
     console.log(message);
 });
@@ -15,6 +21,8 @@ window.ipcRenderer.on("take_query_suggestions", (event, suggestions) => {
                 $(".fliger-suggestion-list").append(`<a onmouseover="hovered_suggestion(this);" onclick="clicked_suggestion(this);" data-preview='${JSON.stringify(match)}' data-suggtype='${suggestion.category}' class="list-group-item list-group-item-action text-truncate">${match.app_name}</a>`);
             } else if (suggestion.category == "Calculator") {
                 $(".fliger-suggestion-list").append(`<a onmouseover="hovered_suggestion(this);" onclick="clicked_suggestion(this);" data-preview='${JSON.stringify(match)}' data-suggtype='${suggestion.category}' class="list-group-item list-group-item-action text-truncate">${match.calc_result}</a>`);
+            } else if (suggestion.category == "Fliger") {
+                $(".fliger-suggestion-list").append(`<a onmouseover="hovered_suggestion(this);" data-suggtype='${suggestion.category}' class="list-group-item list-group-item-action text-truncate">${match.fliger_title}</a>`);
             }
         })
     });
@@ -85,6 +93,10 @@ function update_preview_panel(preview_data, suggestion_type) {
         case "Calculator": {
             change_preview_panel("simple-preview-panel", "images/calculator.svg", preview_data.calc_result, preview_data.calc_subtext);
         }
+
+        case "Fliger": {
+            change_preview_panel("fliger-settings-panel");
+        }
     }
 }
 
@@ -149,10 +161,20 @@ function change_preview_panel(panel_type, source, text, subtext) {
             $(".fliger-image-preview").find(".fliger-preview-subtext").text(subtext);
             break;
         }
+
+        case "fliger-settings-panel": {
+            $(".fliger-preview-template").addClass("d-none").removeClass("d-flex");
+            $(".fliger-settings-preview").addClass("d-flex").removeClass("d-none");
+            break;
+        }
     }
 }
 
 function showToast(message) {
     $("#info-toast").find(".toast-header").text(message);
     $("#info-toast").toast('show');
+}
+
+function show_licenses() {
+    window.ipcRenderer.send("show-fliger-licenses", { src: "fliger_panel.js" });
 }
