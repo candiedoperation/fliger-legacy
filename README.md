@@ -1,4 +1,3 @@
-![Fliger_Logo](public/images/fliger.svg)
 Fliger is an Electron Based Launcher focused on Linux Desktops.
 
 There is Fliger where,
