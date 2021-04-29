@@ -79,7 +79,7 @@ function createWindow() {
     });
 
     ipc.on("fliger_query_string", (event, message) => {
-        fliger_plugins.automate(message, (query_suggestions) => {
+        fliger_plugins.automate(message, fliger_panel, (query_suggestions) => {
             fliger_panel.webContents.send("take_query_suggestions", query_suggestions);
         })
     });

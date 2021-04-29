@@ -9,22 +9,25 @@ window.ipcRenderer.on("ping", (event, message) => {
 });
 
 window.ipcRenderer.on("take_query_suggestions", (event, suggestions) => {
-    $(".fliger-suggestion-list").empty();
-    suggestions.forEach((suggestion) => {
-        $(".fliger-suggestion-list").append(`<span class="text-muted ml-2">${suggestion.category}</span>`);
-        /*$(".fliger-suggestion-list").append(`<a href="#" onmouseover="hovered_suggestion(this);" data-preview='${JSON.stringify(suggestion.matches[0])}' class="list-group-item list-group-item-action active">${suggestion.matches[0].path_name}</a>`);
-        suggestion.matches.shift();*/
+    if(suggestions.refresh_list) {
+        $(".fliger-suggestion-list").empty();
+    }
+
+    suggestions.data.forEach((suggestion) => {
         suggestion.matches.forEach((match) => {
             if (suggestion.category == "Files" || suggestion.category == "Folders") {
-                $(".fliger-suggestion-list").append(`<a onmouseover="hovered_suggestion(this);" onclick="clicked_suggestion(this);" data-preview='${JSON.stringify(match)}' data-suggtype='${suggestion.category}' class="list-group-item list-group-item-action text-truncate">${match.path_name}</a>`);
+                $(".fliger-suggestion-list").prepend(`<a onmouseover="hovered_suggestion(this);" onclick="clicked_suggestion(this);" data-preview='${JSON.stringify(match)}' data-suggtype='${suggestion.category}' class="list-group-item list-group-item-action text-truncate">${match.path_name}</a>`);
             } else if (suggestion.category == "Apps") {
-                $(".fliger-suggestion-list").append(`<a onmouseover="hovered_suggestion(this);" onclick="clicked_suggestion(this);" data-preview='${JSON.stringify(match)}' data-suggtype='${suggestion.category}' class="list-group-item list-group-item-action text-truncate">${match.app_name}</a>`);
+                $(".fliger-suggestion-list").prepend(`<a onmouseover="hovered_suggestion(this);" onclick="clicked_suggestion(this);" data-preview='${JSON.stringify(match)}' data-suggtype='${suggestion.category}' class="list-group-item list-group-item-action text-truncate">${match.app_name}</a>`);
             } else if (suggestion.category == "Calculator") {
-                $(".fliger-suggestion-list").append(`<a onmouseover="hovered_suggestion(this);" onclick="clicked_suggestion(this);" data-preview='${JSON.stringify(match)}' data-suggtype='${suggestion.category}' class="list-group-item list-group-item-action text-truncate">${match.calc_result}</a>`);
+                $(".fliger-suggestion-list").prepend(`<a onmouseover="hovered_suggestion(this);" onclick="clicked_suggestion(this);" data-preview='${JSON.stringify(match)}' data-suggtype='${suggestion.category}' class="list-group-item list-group-item-action text-truncate">${match.calc_result}</a>`);
             } else if (suggestion.category == "Fliger") {
-                $(".fliger-suggestion-list").append(`<a onmouseover="hovered_suggestion(this);" data-suggtype='${suggestion.category}' class="list-group-item list-group-item-action text-truncate">${match.fliger_title}</a>`);
+                $(".fliger-suggestion-list").prepend(`<a onmouseover="hovered_suggestion(this);" data-suggtype='${suggestion.category}' class="list-group-item list-group-item-action text-truncate">${match.fliger_title}</a>`);
+            } else if(suggestion.category == "Wikipedia") {
+                $(".fliger-suggestion-list").prepend(`<a onmouseover="hovered_suggestion(this);" onclick="clicked_suggestion(this);" data-preview='${JSON.stringify(match)}' data-suggtype='${suggestion.category}' class="list-group-item list-group-item-action text-truncate">${match.wiki_title}</a>`);
             }
-        })
+        });
+        $(".fliger-suggestion-list").prepend(`<span class="text-muted ml-2">${suggestion.category}</span>`);
     });
 });
 
@@ -92,10 +95,12 @@ function update_preview_panel(preview_data, suggestion_type) {
 
         case "Calculator": {
             change_preview_panel("simple-preview-panel", "images/calculator.svg", preview_data.calc_result, preview_data.calc_subtext);
+            break;
         }
 
         case "Fliger": {
             change_preview_panel("fliger-settings-panel");
+            break;
         }
     }
 }
