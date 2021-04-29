@@ -1,5 +1,5 @@
 ![Fliger](public/images/readme-1.svg)<br/>
-Fliger is an Electron Based Launcher focused on Linux Desktops.
+Fliger is an Electron Based Launcher focused on **Linux Desktops**, [completely open source](public/licenses.pdf) and Licensed under [GNU GPL v3](https://gitlab.com/candiedoperation/fliger/-/blob/56ce88f339a2821ff0ce2b67a949362b01fcdb51/LICENSE)
 
 There is Fliger where,
 - Apps are **Listed**
@@ -10,4 +10,5 @@ There is Fliger where,
 - Videos are **Auto Played**
 
 See Fliger in Action at the [Wiki Gallery](https://gitlab.com/candiedoperation/fliger/wikis/Gallery)<br/>
-Learn more about Fliger in the [Wiki](https://gitlab.com/candiedoperation/fliger/wikis/Home)
+Learn more about Fliger in the [Wiki](https://gitlab.com/candiedoperation/fliger/wikis/Home)<br/>
+Fliger Documentation under the Developers Section at [Fliger Developers](https://gitlab.com/candiedoperation/fliger/wikis/Fliger-Developers)
