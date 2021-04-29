@@ -1,4 +1,4 @@
-[Fliger](public/images/readme-1.svg)
+![Fliger](public/images/readme-1.svg)<br/>
 Fliger is an Electron Based Launcher focused on Linux Desktops.
 
 There is Fliger where,
@@ -9,5 +9,5 @@ There is Fliger where,
 - Images are **Shown**
 - Videos are **Auto Played**
 
-See Fliger in Action at the [Wiki Gallery](https://gitlab.com/candiedoperation/fliger/wikis/Gallery)
+See Fliger in Action at the [Wiki Gallery](https://gitlab.com/candiedoperation/fliger/wikis/Gallery)<br/>
 Learn more about Fliger in the [Wiki](https://gitlab.com/candiedoperation/fliger/wikis/Home)
