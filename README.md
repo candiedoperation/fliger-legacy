@@ -9,5 +9,5 @@ There is Fliger where,
 - Images are **Shown**
 - Videos are **Auto Played**
 
-See Fliger in Action at the [Wiki Gallery](https://gitlab.com/candiedoperation/fliger/wikis/Gallery)
+See Fliger in Action at the [Wiki Gallery](https://gitlab.com/candiedoperation/fliger/wikis/Gallery)<br/>
 Learn more about Fliger in the [Wiki](https://gitlab.com/candiedoperation/fliger/wikis/Home)
