@@ -11,9 +11,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="800px"
-   height="300px"
-   viewBox="0 0 800 300"
+   width="503.11191"
+   height="207.16373"
+   viewBox="0 0 503.11191 207.16373"
    version="1.1"
    id="SVGRoot"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.84474249"
-     inkscape:cx="225.39058"
-     inkscape:cy="150"
+     inkscape:cx="466.12702"
+     inkscape:cy="5.0264351"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -323,7 +323,7 @@
     <filter
        id="filter4179"
        inkscape:label="Color Shift"
-       style="color-interpolation-filters:sRGB;">
+       style="color-interpolation-filters:sRGB">
       <feColorMatrix
          id="feColorMatrix4175"
          result="color1"
@@ -351,53 +351,60 @@
   <g
      id="layer1"
      inkscape:groupmode="layer"
-     inkscape:label="Layer 1">
+     inkscape:label="Layer 1"
+     transform="translate(0,-0.50044483)">
     <flowRoot
        xml:space="preserve"
        id="flowRoot34"
-       style="fill:black;fill-opacity:1;line-height:1.25;stroke:none;font-family:Inter;font-style:normal;font-weight:100;font-size:40px;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:'Inter Thin';font-stretch:normal;font-variant:normal;"><flowRegion
+       style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Inter;-inkscape-font-specification:'Inter Thin';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"><flowRegion
          id="flowRegion36"
-         style="-inkscape-font-specification:'Inter Thin';font-family:Inter;font-weight:100;font-style:normal;font-stretch:normal;font-variant:normal;"><rect
+         style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:normal;font-family:Inter;-inkscape-font-specification:'Inter Thin'"><rect
            id="rect38"
            width="447.47363"
            height="140.87134"
            x="211.8989"
            y="57.322495"
-           style="-inkscape-font-specification:'Inter Thin';font-family:Inter;font-weight:100;font-style:normal;font-stretch:normal;font-variant:normal;" /></flowRegion><flowPara
+           style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:normal;font-family:Inter;-inkscape-font-specification:'Inter Thin'" /></flowRegion><flowPara
          id="flowPara40" /></flowRoot>    <g
        aria-label="Fliger"
-       transform="translate(47.100266,35.270672)"
+       transform="matrix(0.65527207,0,0,0.65527207,17.913912,28.071133)"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:133.33332825px;line-height:1.25;font-family:Inter;-inkscape-font-specification:Inter;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        id="flowRoot42">
       <path
          d="m 269.99023,164.8975 h 30.27462 v -43.5606 h 43.34281 V 96.94296 H 300.26485 V 77.776294 h 48.13447 V 53.382356 h -78.40909 z"
          style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:153.33332825px;line-height:1.25;font-family:Inter;-inkscape-font-specification:'Inter Heavy'"
-         id="path86" />
+         id="path86"
+         inkscape:connector-curvature="0" />
       <path
          d="M 390.02692,53.382356 H 359.97011 V 164.8975 h 30.05681 z"
          style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:153.33332825px;line-height:1.25;font-family:Inter;-inkscape-font-specification:'Inter Heavy'"
-         id="path88" />
+         id="path88"
+         inkscape:connector-curvature="0" />
       <path
          d="m 405.19147,164.8975 h 30.05681 V 81.261143 h -30.05681 z m 15.0284,-92.348478 c 8.16762,0 14.81061,-6.152936 14.81061,-13.721591 0,-7.568655 -6.64299,-13.72159 -14.81061,-13.72159 -8.16761,0 -14.8106,6.152935 -14.8106,13.72159 0,7.568655 6.64299,13.721591 14.8106,13.721591 z"
          style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:153.33332825px;line-height:1.25;font-family:Inter;-inkscape-font-specification:'Inter Heavy'"
-         id="path90" />
+         id="path90"
+         inkscape:connector-curvature="0" />
       <path
          d="m 490.70637,198.00356 c 26.46307,0 43.99621,-12.08806 43.99621,-33.32386 V 81.261143 h -30.05682 v 14.592802 h -0.65341 c -3.26704,-8.494318 -11.10795,-15.681817 -23.52272,-15.681817 -16.55303,0 -32.67046,12.632575 -32.67046,42.907192 0,28.96781 15.02841,40.72917 32.88826,40.72917 11.32576,0 20.25568,-4.79167 23.52273,-13.28599 h 0.87121 v 14.1572 c 0,9.85559 -5.71733,13.06818 -13.50379,13.06818 -6.91525,0 -11.97917,-2.06913 -12.85038,-7.4053 h -28.9678 c 1.14347,16.11742 15.79072,27.66098 40.94697,27.66098 z m 1.08901,-55.53977 c -8.27651,0 -13.06818,-6.96969 -13.06818,-19.38447 0,-12.41477 4.79167,-19.82007 13.06818,-19.82007 8.27652,0 13.28599,7.4053 13.28599,19.82007 0,12.19697 -5.00947,19.38447 -13.28599,19.38447 z"
          style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:153.33332825px;line-height:1.25;font-family:Inter;-inkscape-font-specification:'Inter Heavy'"
-         id="path92" />
+         id="path92"
+         inkscape:connector-curvature="0" />
       <path
          d="m 589.91566,166.42212 c 23.19602,0 38.11553,-11.10795 40.94697,-28.53219 h -27.44318 c -1.74243,4.73721 -6.69745,7.4053 -12.85038,7.4053 -8.92993,0 -14.1572,-5.88068 -14.1572,-13.93939 v -1.30682 h 54.45076 v -6.9697 c 0,-26.626416 -16.33523,-42.907192 -41.60038,-42.907192 -25.91856,0 -42.47159,17.206438 -42.47159,43.125002 0,27.06202 16.33523,43.12499 43.125,43.12499 z m -13.50379,-52.92613 c 0.16335,-7.24195 6.15294,-12.19697 13.50379,-12.19697 7.45975,0 13.12263,5.00947 13.28598,12.19697 z"
          style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:153.33332825px;line-height:1.25;font-family:Inter;-inkscape-font-specification:'Inter Heavy'"
-         id="path94" />
+         id="path94"
+         inkscape:connector-curvature="0" />
       <path
          d="m 642.9779,164.8975 h 30.05682 v -43.5606 c 0,-9.58333 6.58854,-15.89962 15.46401,-15.89962 3.1037,0 8.11317,0.49006 11.10796,1.52462 V 81.315594 c -2.39583,-0.70786 -5.00947,-1.143466 -7.62311,-1.143466 -8.92992,0 -15.89962,5.227272 -18.94886,16.988635 h -0.87121 V 81.261143 H 642.9779 Z"
          style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:153.33332825px;line-height:1.25;font-family:Inter;-inkscape-font-specification:'Inter Heavy'"
-         id="path96" />
+         id="path96"
+         inkscape:connector-curvature="0" />
     </g>
     <g
        inkscape:label="Layer 1"
        id="layer1-0"
-       transform="matrix(1.8228429,0,0,1.8228429,57.406301,32.028419)">
+       transform="matrix(1.1944581,0,0,1.1944581,24.667162,25.946574)">
       <g
          style="filter:url(#filter4179)"
          transform="matrix(1.1527737,0,0,1.1527737,-10.542134,-12.777852)"
