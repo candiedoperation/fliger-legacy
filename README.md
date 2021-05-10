@@ -2,7 +2,7 @@
 Fliger is an Electron Based Launcher focused on **Linux Desktops**, [completely open source](public/licenses.pdf) and Licensed under [GNU GPL v3](https://gitlab.com/candiedoperation/fliger/-/blob/56ce88f339a2821ff0ce2b67a949362b01fcdb51/LICENSE)
 
 Everything within the blink of an eye!
-![Fliger](public/images/fliger-blink.png)<br/>
+![Fliger](https://gitlab.com/candiedoperation/fliger/-/blob/cf33362899ddf7048d8ef49c3eda62eac9a4362e/fliger-blink.png)<br/>
 
 There is Fliger where,
 - Apps are **Listed**
